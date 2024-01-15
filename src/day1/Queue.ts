@@ -22,6 +22,8 @@ export default class Queue<T> {
 
         this.tail.next = node;  // "tail-1" is pointing to this guy, so when we update this.tail to a new node,
         this.tail = node;       // "tail-1" reference is not lot and "tail-1'.next points to the ne tail
+                                // TLDR: this.tail.next is a reference to an object in memory that will be updated
+                                // which is also reference by "tail-1", that's why is not lost when we update this.tail
     }
 
     deque(): T | undefined {
