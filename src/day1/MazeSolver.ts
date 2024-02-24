@@ -56,7 +56,7 @@ function walk(maze: string[], wall: string, curr: Point, end: Point, seen: boole
     // Recurse post
     path.pop(); //undo
 
-    return false;
+    return false; // this signals the previous function call that this path is not possible
 }
 
 export default function solve(maze: string[], wall: string, start: Point, end: Point): Point[] {
